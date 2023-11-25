@@ -16,28 +16,14 @@ void Marge(int arr[],int l,int m,int r)
 	for(i=0,j=0,k=l; i<n1 && j<n2; k++)
 	{
 		if(L[i] <= R[j])
-		{
-			arr[k] = L[i];
-			i++;
-		}
+			arr[k] = L[i++];
 		else
-		{
-			arr[k]= R[j];
-			j++;
-		}
+			arr[k]= R[j++];
 	}
 	while(i<n1)
-	{
-		arr[k]=L[i];
-		i++;
-		k++;
-	}
+		arr[k++]=L[i++];
 	while(j<n2)
-	{
-		arr[k]=R[j];
-		j++;
-		k++;
-	}
+		arr[k++]=R[j++];
 
 }
 void Divide(int arr[],int l,int r)
@@ -54,7 +40,7 @@ void Divide(int arr[],int l,int r)
 void Get_Element(int *arr,int n)
 {
 	char ch;
-	int i;
+	int i,j=0;
 	printf("\n You Want To Insert Automatic Random Element Press(Y / N)");
 	ch = getch();
 	printf("[ %c ]\n",ch);
@@ -62,8 +48,9 @@ void Get_Element(int *arr,int n)
 	{
 		for(i =0; i<n; i++)
 		{
-			arr[i] = rand() % 100;
-			printf("Enter Element Of Arry[%d] :-%d\n",i,arr[i]);
+			while(j++<3)
+				arr[i] = rand() % 100;
+			printf("Auto Element Of Arry[%d] :-%d\n",i,arr[i]);
 		}
 	}
 	else
