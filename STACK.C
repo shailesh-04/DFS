@@ -1,3 +1,4 @@
+//										LIFO(LAST IN - FIST OUT)
 #include<conio.h>
 #include<stdio.h>
 int stack[10];
@@ -30,8 +31,7 @@ void Display()
 	else
 	{
 		for(i=top; i>=0; i--)
-			printf("%d,",stack[i
-			]);
+			printf("%d,",stack[i]);
 	}
 }
 void main()
